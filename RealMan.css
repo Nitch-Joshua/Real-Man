@@ -1,0 +1,327 @@
+:root{
+  --white: #ffffff;
+  --rm-gold: #d4af37;
+  --iron-red: #a3001b;
+  --navy: #0a1a3f;
+  --iron-shadow: #2a0f0f;
+  --muted: #6b7280;
+}
+
+/* base */
+*{box-sizing: border-box}
+body{margin:0;font-family: 'Montserrat', sans-serif;background:var(--white);color:#111}
+.container{width:90%;max-width:1100px;margin:0 auto}
+
+/* header */
+.site-header{background:linear-gradient(180deg,var(--white),var(--white));border-bottom:1px solid rgba(10,26,63,0.06)}
+.header-inner{display:flex;justify-content:space-between;align-items:center;padding:18px 0}
+.brand{display:flex;align-items:center;gap:12px}
+.brand-logo{height:52px;width:52px;object-fit:contain;border-radius:8px;box-shadow:0 6px 18px rgba(163,0,27,0.08);border:2px solid rgba(212,175,55,0.15)}
+.brand-text h1{margin:0;font-size:1.2rem;color:var(--navy)}
+.brand-text small{display:block;color:var(--muted);font-size:.8rem}
+
+.nav a{margin-left:18px;text-decoration:none;color:var(--navy);font-weight:600}
+.nav .btn-cta{background:var(--iron-red);color:var(--white);padding:8px 12px;border-radius:6px;text-decoration:none}
+
+/* hero */
+.hero{padding:48px 0}
+.hero-inner{display:flex;gap:32px;align-items:center}
+.hero-left{flex:1}
+.hero-left h2{font-size:2rem;color:var(--navy);margin:0 0 12px}
+.lead{color:var(--muted);margin-bottom:18px}
+.hero-actions .btn{display:inline-block;padding:10px 16px;border-radius:8px;text-decoration:none;font-weight:600}
+.btn-primary{background:linear-gradient(90deg,var(--rm-gold),var(--iron-red));color:var(--white);border:none}
+.btn-outline{border:2px solid var(--navy);color:var(--navy);background:transparent}
+.hero-right{flex:0 0 360px;text-align:center}
+.hero-image{max-width:100%;border-radius:10px;box-shadow:0 12px 30px rgba(10,26,63,0.08)}
+
+/* products */
+.section-title{margin:28px 0 12px;color:var(--navy);text-align:center}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.card{background:var(--white);border-radius:12px;overflow:hidden;box-shadow:0 6px 18px rgba(10,26,63,0.04)}
+.card img{width:100%;height:220px;object-fit:cover}
+.card-body{padding:14px}
+.card-body h4{margin:0 0 8px;color:var(--navy)}
+.card-body p{color:var(--muted);font-size:.95rem}
+.card-foot{display:flex;justify-content:space-between;align-items:center;padding-top:12px}
+.price{font-weight:700;color:var(--iron-red)}
+.btn-sm{background:var(--navy);color:var(--white);border:none;padding:8px 10px;border-radius:6px}
+.link{color:var(--navy);text-decoration:none;margin-left:8px}
+
+/* about */
+.about{padding:28px 0}
+.about-inner{display:flex;justify-content:space-between;align-items:center;gap:20px}
+.about-cta .link{border:1px solid rgba(10,26,63,0.06);padding:8px 12px;border-radius:8px}
+
+/* contact */
+.contact{padding:28px 0}
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+.card.small{padding:16px}
+.form input,.form textarea{width:100%;padding:10px;border:1px solid rgba(10,26,63,0.08);border-radius:8px;margin-bottom:10px}
+.form button.btn{background:var(--iron-red);color:var(--white);padding:10px 14px;border:none;border-radius:8px}
+
+/* footer */
+.site-footer{background:linear-gradient(180deg,var(--navy),var(--iron-shadow));color:var(--white);padding:18px 0;margin-top:40px}
+.footer-inner{display:flex;justify-content:space-between;align-items:center}
+.socials a{color:var(--white);margin-left:12px;text-decoration:none}
+
+/* responsive */
+@media (max-width:900px){
+  .hero-inner{flex-direction:column}
+  .hero-right{flex-basis:auto}
+  .about-inner{flex-direction:column}
+  .footer-inner{flex-direction:column;gap:8px}
+}
+
+/* REAL MAN — GOLD NAVY MODAL */
+.rm-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  backdrop-filter: blur(6px);
+  z-index: 999;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.rm-modal-content {
+  background: #0a1a3f;
+  border: 2px solid var(--rm-gold);
+  width: 90%;
+  max-width: 450px;
+  margin: 80px auto;
+  padding: 20px;
+  border-radius: 14px;
+  animation: rmPop .25s ease-out;
+  color: white;
+}
+
+.rm-close {
+  float: right;
+  font-size: 28px;
+  color: var(--rm-gold);
+  cursor: pointer;
+}
+
+.rm-modal-img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+.rm-modal-title {
+  color: var(--rm-gold);
+  margin-bottom: 6px;
+}
+
+.rm-modal-desc {
+  color: #dcdcdc;
+  margin-bottom: 10px;
+}
+
+.rm-modal-price {
+  color: var(--rm-gold);
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.rm-modal-extra {
+  background: rgba(212,175,55,0.1);
+  border-left: 3px solid var(--rm-gold);
+  padding: 12px;
+  border-radius: 6px;
+  font-size: .9rem;
+}
+
+/* Animasi */
+@keyframes rmPop {
+  from { opacity: 0; transform: scale(.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* --- Styling Tambahan untuk Halaman Kategori (man.html, dll) --- */
+
+/* Penanda Navigasi Aktif */
+.nav a.active-nav {
+    /* Sedikit penekanan pada link yang aktif */
+    color: var(--iron-red); 
+    border-bottom: 2px solid var(--rm-gold);
+    padding-bottom: 2px;
+}
+
+/* Header Kategori (Mirip Hero, tapi lebih kompak) */
+.category-header {
+    background-color: var(--navy);
+    color: var(--white);
+    padding: 60px 0 30px;
+    text-align: center;
+    margin-top: -1px; /* Mengatasi border header utama */
+}
+.category-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+    color: var(--rm-gold); /* Memberi sentuhan warna emas */
+}
+.category-header p {
+    font-size: 1.1rem;
+    opacity: 0.8;
+}
+
+/* Grid Khusus Halaman Kategori */
+.category-grid {
+    margin-top: 30px;
+    margin-bottom: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+/* Menjaga Tinggi Judul Kartu Agar Rata */
+.category-grid .card-body h4 {
+    min-height: 40px; 
+}
+
+/* --- Styling Khusus Halaman Register (Single-View Focused Form) --- */
+
+.register-page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Diposisikan di tengah vertikal */
+    padding: 100px 0;
+    /* GANTI LATAR BELAKANG HALAMAN DENGAN GAMBAR/POLA DI BODY/HTML */
+    background: url('gambar/engineer_bg.jpg') center center / cover no-repeat;
+}
+
+.register-page .container {
+    max-width: 450px; /* Lebar lebih fokus */
+    width: 90%;
+    background: rgba(255, 255, 255, 0.95); /* Semi-transparan putih */
+    border-radius: 16px;
+    padding: 30px 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); 
+    border: 3px solid var(--rm-gold); /* Frame luar emas royal */
+}
+
+/* Tab Navigation (disederhanakan) */
+.register-tab-nav {
+    display: flex;
+    width: 100%;
+    margin-bottom: 25px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.register-tab-nav button {
+    flex: 1;
+    padding: 12px 0;
+    border: none;
+    background: var(--light-gray);
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    color: var(--navy);
+    transition: all 0.3s ease;
+}
+
+.register-tab-nav button.active-tab {
+    background: var(--iron-red); /* Tombol aktif Iron Red */
+    color: var(--white);
+    box-shadow: inset 0 -3px 0 var(--rm-gold); /* Aksen emas di bawah */
+}
+
+/* Konten Formulir */
+.form-content {
+    /* Hanya berisi form-wrapper, tidak ada padding eksternal */
+    
+}
+
+.form-wrapper {
+    position: relative;
+    transition: opacity 0.3s ease-in-out; /* Tambahkan fade transition */
+}
+
+.login-form,
+.signup-form {
+    width: 100%;
+    padding: 0; /* Pastikan tidak ada padding tambahan */
+}
+
+.form-content .title {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--navy);
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.input-box {
+    /* Gaya input yang lebih clean */
+    display: flex;
+    align-items: center;
+    height: 50px;
+    width: 100%;
+    margin: 18px 0;
+    border: none;
+    border-bottom: 2px solid var(--muted); /* Border bawah minimalis */
+    transition: border-color 0.3s ease;
+}
+
+.input-box:focus-within {
+    border-bottom-color: var(--iron-red);
+}
+
+.input-box i {
+    font-size: 16px;
+    color: var(--navy);
+    padding-right: 15px;
+    transition: transform 0.3s ease;
+}
+
+.input-box:focus-within i {
+    transform: translateX(5px); /* Ikon bergeser saat fokus (animasi hidup) */
+    color: var(--iron-red);
+}
+
+.input-box input {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border: none;
+    padding: 0;
+    font-size: 16px;
+    background: transparent;
+}
+
+.button input {
+    width: 100%;
+    color: var(--white);
+    background: var(--iron-red);
+    border: 2px solid var(--iron-red);
+    border-radius: 6px;
+    padding: 12px 0;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    margin-top: 30px;
+    text-transform: uppercase;
+}
+
+.button input:hover {
+    background: var(--navy);
+    border-color: var(--navy);
+    transform: translateY(-2px); /* Tombol naik sedikit saat hover */
+    box-shadow: 0 5px 10px rgba(10, 26, 63, 0.4); 
+}
+
+/* Menyembunyikan/menampilkan formulir */
+.hidden-form {
+    display: none !important;
+    opacity: 0;
+}

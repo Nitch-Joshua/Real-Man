@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Register / Login — Real Man Royal Engineer</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="RealMan.css">
+    
+</head>
+<body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="brand">
+          <a href="index.html" style="display: flex; align-items: center; gap: 12px; text-decoration: none;">
+            <img src="gambar/Real Man.jpg" alt="Real Man Emblem" class="brand-logo">
+            <div class="brand-text">
+              <h1>Real Man</h1>
+              <small>Royal Engineer Collection</small>
+            </div>
+          </a>
+        </div>
+
+        <nav class="nav">
+          <a href="index.html" class="btn btn-outline" style="padding: 8px 12px; border-color: var(--white); color: var(--navy); background: var(--white);">
+            <i class="fas fa-arrow-left"></i> Kembali ke Home
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <section class="register-page">
+        <div class="container">
+            
+            <div class="register-tab-nav" id="tabNav">
+                <button class="active-tab" onclick="showForm('login')">Login</button>
+                <button onclick="showForm('signup')">Daftar</button>
+            </div>
+            
+            <div class="form-content">
+                <div class="form-wrapper" id="formWrapper">
+                    
+                    <div class="login-form" id="loginForm">
+                        <div class="title">Akses Akun Royal Anda</div>
+                        <form action="#">
+                            <div class="input-boxes">
+                                <div class="input-box">
+                                    <i class="fas fa-envelope"></i>
+                                    <input type="email" placeholder="Email Terdaftar" required>
+                                </div>
+                                <div class="input-box">
+                                    <i class="fas fa-lock"></i>
+                                    <input type="password" placeholder="Kata Sandi" required>
+                                </div>
+                                
+                                <div class="text"><a href="#" onclick="showForm('signup')">Lupa Kata Sandi?</a></div>
+                                
+                                <div class="button input-box">
+                                    <input type="submit" value="Login Sekarang">
+                                </div>
+                                
+                                <div class="text">
+                                    Belum punya akun? <a href="#" onclick="showForm('signup'); return false;">Daftar di sini</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="signup-form" id="signupForm" style="display: none;">
+                        <div class="title">Buat Akun Baru</div>
+                        <form action="#">
+                            <div class="input-boxes">
+                                <div class="input-box">
+                                    <i class="fas fa-user"></i>
+                                    <input type="text" placeholder="Nama Lengkap" required>
+                                </div>
+                                <div class="input-box">
+                                    <i class="fas fa-phone-alt"></i>
+                                    <input type="text" placeholder="Nomor Telepon (+62-)" required>
+                                </div>
+                                <div class="input-box">
+                                    <i class="fas fa-envelope"></i>
+                                    <input type="email" placeholder="Email Anda" required>
+                                </div>
+                                <div class="input-box">
+                                    <i class="fas fa-lock"></i>
+                                    <input type="password" placeholder="Buat Kata Sandi" required>
+                                </div>
+                                
+                                <div class="button input-box">
+                                    <input type="submit" value="Daftar Akun">
+                                </div>
+                                
+                                <div class="text">
+                                    Sudah punya akun? <a href="#" onclick="showForm('login'); return false;">Login</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div>© 2025 <strong>Real Man</strong> — Royal Engineer</div>
+        <div class="socials">
+          <a href="https:/www.instagram.com/aaldipta">Aldi</a>
+          <a href="https://www.instagram.com/joshuabdisetia/">Joshua</a>
+          <a href="https://www.instagram.com/himapro_sk/">Sistem Komputer</a>
+        </div>
+      </div>
+    </footer>
+    
+    <script>
+        function showForm(formType) {
+            const navButtons = document.getElementById('tabNav').children;
+            const loginForm = document.getElementById('loginForm');
+            const signupForm = document.getElementById('signupForm');
+
+            // Reset kelas aktif
+            navButtons[0].classList.remove('active-tab');
+            navButtons[1].classList.remove('active-tab');
+
+            // Mengontrol tampilan formulir
+            if (formType === 'login') {
+                navButtons[0].classList.add('active-tab');
+                loginForm.style.display = 'block';
+                signupForm.style.display = 'none';
+            } else if (formType === 'signup') {
+                navButtons[1].classList.add('active-tab');
+                loginForm.style.display = 'none';
+                signupForm.style.display = 'block';
+            }
+        }
+        
+        // Panggil saat halaman dimuat untuk memastikan formulir Login terlihat
+        document.addEventListener('DOMContentLoaded', () => {
+            showForm('login');
+        });
+        
+        // Catatan: Logika resize window sudah tidak diperlukan karena kita menggunakan hide/show yang stabil.
+    </script>
+</body>
+</html>

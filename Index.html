@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Real Man — Royal Engineer Collection</title>
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="RealMan.css">
+  </head>
+  <body>
+    <!-- header / navbar -->
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="brand">
+          <img src="gambar/Real Man.jpg" alt="Real Man Emblem" class="brand-logo">
+          <div class="brand-text">
+            <h1>Real Man</h1>
+            <small>Royal Engineer Collection</small>
+          </div>
+        </div>
+
+        <nav class="nav">
+          <a href="#">Home</a>
+          <a href="Men.html">Men</a>
+          <a href="Woman.html">Women</a>
+          <a href="Football.html">Football</a>
+          <a href="register.html" class="btn-cta">Register</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- hero -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-left">
+          <h2>Football Heritage Meets Arc Reactor Engineering</h2>
+          <p class="lead">Koleksi eksklusif yang menggabungkan estetika klasik Royal Tim dengan sentuhan teknologi — jersey, hoodie, dan aksesori edisi terbatas.</p>
+          <div class="hero-actions">
+            <a href="#products" class="btn btn-primary">Lihat Produk</a>
+            <a href="#about" class="btn btn-outline">Tentang Koleksi</a>
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <img src="gambar/Jersey.jpg" alt="Real Man jersey mockup" class="hero-image">
+        </div>
+      </div>
+    </section>
+
+    <!-- products preview -->
+    <main class="container" id="products">
+      <h3 class="section-title">Produk Terbaru</h3>
+      <div class="grid">
+        <article class="card">
+          <img src="gambar/White edition.png" alt="Jersey White">
+          <div class="card-body">
+            <h4>Jersey Home — White Edition</h4>
+            <p>Putih klasik dengan trim emas & aksen metalik merah. Size S–XXL.</p>
+            <div class="card-foot">
+              <span class="price">Rp 599.000</span>
+              <div>
+                <button class="btn btn-sm">Add</button>
+                <a class="link" href="product_detail.html" onclick="openModal({
+                        img: 'gambar/White edition.png',
+                        title: 'Jersey Home — White Edition',
+                        desc: 'Putih klasik dengan trim emas & aksen metalik merah. Size S–XXL.',
+                        price: 'Rp 599.000'
+                    }); return false;">Detail</a>
+
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="gambar/Red Metalic.png" alt="Hoodie Red">
+          <div class="card-body">
+            <h4>Hoodie Engineer — Red Metallic</h4>
+            <p>Hoodie premium dengan aksen plate emas dan printing arc-reactor.</p>
+            <div class="card-foot">
+              <span class="price">Rp 749.000</span>
+              <div>
+                <button class="btn btn-sm">Add</button>
+                <a class="link" href="product_detail.html" onclick="openModal({
+                        img: 'gambar/Red Metalic.png',
+                        title: 'Hoodie Engineer — Red Metallic',
+                        desc: 'Hoodie premium dengan aksen plate emas dan printing arc-reactor.',
+                        price: 'Rp 749.000'
+                    }); return false;">Detail</a>
+
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="gambar/Cap Royal.jpeg" alt="Cap Gold">
+          <div class="card-body">
+            <h4>Cap Royal — Gold Trim</h4>
+            <p>Topi kolektor dengan trim emas dan logo Real Man embroidery.</p>
+            <div class="card-foot">
+              <span class="price">Rp 199.000</span>
+              <div>
+                <button class="btn btn-sm">Add</button>
+                <a class="link" href="product_detail.html" onclick="openModal({
+                        img: 'gambar/Cap Royal.jpeg',
+                        title: 'Cap Royal — Gold Trim',
+                        desc: 'Topi kolektor dengan trim emas dan logo Real Man embroidery.',
+                        price: 'Rp 199.000'
+                    }); return false;">Detail</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </main>
+
+    <!-- about -->
+    <section class="about container" id="about">
+      <div class="about-inner">
+        <div>
+          <h3>Tentang Koleksi</h3>
+          <p>Koleksi "Real Man — Royal Engineer" adalah koleksi terbatas yang tercipta melalui ide Mahasiswa Institut Asia Malang yang sedang berada di semester 3 dengan jurusan Sistem Komputer. Ide tersebut ditemukan dan dikerjakan oleh 2 Pemuda bernama M. Aldi Pratama dan Joshua Abdi Setia Marpaung. Mereka berdua adalah Founder dari Real Man.</p>
+        </div>
+        <div class="about-cta">
+        </div>
+      </div>
+    </section>
+
+    <!-- contact / newsletter forms (dua formulir) -->
+    <section class="contact container">
+      <div class="contact-grid">
+        <div class="card small">
+          <h4>Newsletter</h4>
+          <form id="newsletterForm" class="form">
+            <input type="email" id="nlEmail" placeholder="name@example.com" required>
+            <button class="btn" type="submit">Subscribe</button>
+          </form>
+        </div>
+
+        <div class="card small">
+          <h4>Kontak</h4>
+          <form id="contactForm" class="form">
+            <input type="text" id="name" placeholder="Nama" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <textarea id="message" placeholder="Pesan" required></textarea>
+            <button class="btn" type="submit">Kirim Pesan</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- footer -->
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div>© 2025 <strong>Real Man</strong> — Royal Engineer</div>
+        <div class="socials">
+          <a href="https:/www.instagram.com/aaldipta">Aldi</a>
+          <a href="https://www.instagram.com/joshuabdisetia/">Joshua</a>
+          <a href="https://www.instagram.com/himapro_sk/">Sistem Komputer</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- UNIVERSAL PRODUCT MODAL -->
+<div id="productModal" class="rm-modal">
+  <div class="rm-modal-content">
+
+    <span class="rm-close" onclick="closeModal()">&times;</span>
+
+    <img id="modalImage" class="rm-modal-img" alt="">
+    <h2 id="modalTitle" class="rm-modal-title"></h2>
+    <p id="modalDesc" class="rm-modal-desc"></p>
+    <p id="modalPrice" class="rm-modal-price"></p>
+
+    <div class="rm-modal-extra">
+      Bagian dari <strong>Real Man — Royal Engineer Collection</strong>.
+    </div>
+
+  </div>
+</div>
+
+<script src="js/modal.js"></script>
+
+
+    <!-- Minimal JS (submit handlers) -->
+    <script src="Scrip.js"></script>
+  </body>
+</html>
